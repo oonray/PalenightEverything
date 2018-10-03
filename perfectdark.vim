@@ -1,9 +1,9 @@
 set background=dark
-
 hi clear
 if exists("syntax_on")
-	syntax reset
+  syntax reset
 endif
+let g:colors_name = "perfectdark"
 
 hi Comment guifg=#0987cb
 hi Constant guifg=#e5bd46
@@ -24,17 +24,17 @@ hi Function guifg=#c2c299
 hi Identifier guifg=darkcyan
 hi Ignore guifg=white
 hi IncSearch gui=reverse
-hi LineNr guifg=brown
+hi LineNr guifg=#a9b5ad
 hi MatchParen gui=None
 hi ModeMsg gui=bold
 hi MoreMsg gui=bold guifg=seagreen
 hi NonText gui=bold guifg=#ff6f30
-hi Normal guifg=#aaaaaa
+hi Normal guifg=#e0e0d0
 hi Pmenu guibg=plum1
 hi PmenuSbar guibg=grey
 hi PmenuSel guibg=grey
 hi PmenuThumb gui=reverse
-hi PreProc guifg=#a9b5ad
+hi PreProc gui=bold guifg=#a9b5ad
 hi Question gui=bold guifg=seagreen
 hi Search guibg=yellow
 hi SignColumn guifg=darkblue guibg=grey
@@ -52,7 +52,7 @@ hi TabLineFill gui=reverse
 hi TabLineSel gui=bold
 hi Title gui=bold guifg=magenta
 hi Todo guifg=#eb9195
-hi Type gui=bold guifg=#569cd6
+hi Type gui=bold guifg=#78a6a6
 hi Underlined gui=underline guifg=slateblue
 hi VertSplit gui=reverse
 hi Visual guifg=#aaa9b5
