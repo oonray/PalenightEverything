@@ -5,17 +5,17 @@ if exists("syntax_on")
 endif
 let g:colors_name = "perfectdark"
 
-syn match cppFuncDef "::\~\?\zs\h\w*\ze([^)]*\()\s*\(const\)\?\)\?$"
-syn region FCall matchgroup=FName start='[[:alpha:]_]\i*\s*(' end=')' contains=FCall,FCallKeyword
-syn region INT start='(' end=')' contains=INT, Int
-syn match Int "\d" contained
 
-hi Int guifg=#e59337
-hi FName guifg=#c2c299
-hi cppFuncDef guifg=#c2c299
+hi Operator guifg=#8f9a9c cterm=bold
+hi cNumber guifg=#e59337
 hi cCustomFunc  guifg=#c2c299
 hi cCustomClass guifg=#c2c299
-
+hi cFormat guifg=#e59337
+hi cUserLabel guifg=#c2c299
+hi cType guifg=#78a6a6 cterm=bold
+hi cConstant guifg=#c2c299
+"#9b90c3
+hi cError guibg=#333333
 
 hi Comment guifg=#0987cb
 hi Constant guifg=#e5bd46
@@ -26,10 +26,10 @@ hi CursorLine guibg=gray90
 hi DiffAdd guibg=lightblue
 hi DiffChange guibg=plum1
 hi DiffDelete gui=bold guifg=blue guibg=lightcyan
-hi DiffText gui=bold guibg=red
+hi DiffText gui=bold guibg=#333333 
 hi Directory guifg=#cf85be
-hi Error guifg=white guibg=red
-hi ErrorMsg guifg=white guibg=red
+hi Error guifg=white 
+hi ErrorMsg guifg=white
 hi FoldColumn guifg=darkblue guibg=grey
 hi Folded guifg=darkblue guibg=lightgrey
 hi Function guifg=#c2c299
@@ -64,12 +64,12 @@ hi TabLineFill gui=reverse
 hi TabLineSel gui=bold
 hi Title gui=bold guifg=magenta
 hi Todo guifg=#eb9195
-hi Type gui=bold guifg=#78a6a6
+hi Type cterm=bold guifg=#78a6a6
 hi Underlined gui=underline guifg=slateblue
 hi VertSplit gui=reverse
 hi Visual guifg=#aaa9b5
 hi VisualNOS gui=bold,underline
-hi WarningMsg guifg=red
+hi WarningMsg guifg=white guibg=#333333
 hi WildMenu guifg=black guibg=yellow
 hi link Boolean Constant
 hi link Character Constant
@@ -84,7 +84,6 @@ hi link Keyword Statement
 hi link Label Statement
 hi link Macro PreProc
 hi link Number Constant
-hi link Operator Statement
 hi link PreCondit PreProc
 hi link Repeat Statement
 hi link SpecialChar Special
