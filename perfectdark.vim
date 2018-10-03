@@ -5,6 +5,18 @@ if exists("syntax_on")
 endif
 let g:colors_name = "perfectdark"
 
+syn match cppFuncDef "::\~\?\zs\h\w*\ze([^)]*\()\s*\(const\)\?\)\?$"
+syn region FCall matchgroup=FName start='[[:alpha:]_]\i*\s*(' end=')' contains=FCall,FCallKeyword
+syn region INT start='(' end=')' contains=INT, Int
+syn match Int "\d" contained
+
+hi Int guifg=#e59337
+hi FName guifg=#c2c299
+hi cppFuncDef guifg=#c2c299
+hi cCustomFunc  guifg=#c2c299
+hi cCustomClass guifg=#c2c299
+
+
 hi Comment guifg=#0987cb
 hi Constant guifg=#e5bd46
 hi Cursor guifg=white
@@ -15,7 +27,7 @@ hi DiffAdd guibg=lightblue
 hi DiffChange guibg=plum1
 hi DiffDelete gui=bold guifg=blue guibg=lightcyan
 hi DiffText gui=bold guibg=red
-hi Directory guifg=blue
+hi Directory guifg=#cf85be
 hi Error guifg=white guibg=red
 hi ErrorMsg guifg=white guibg=red
 hi FoldColumn guifg=darkblue guibg=grey
