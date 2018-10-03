@@ -1,84 +1,17 @@
-set background=dark
+" Configuration file for vim
+set modelines=0		" CVE-2007-2438
 
-hi clear
-if exists("syntax_on")
-	syntax reset
-endif
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+set backspace=2		" more powerful backspacing
 
-hi Comment guifg=#0987cb
-hi Constant guifg=#e5bd46
-hi Cursor guifg=white
-hi CursorColumn guibg=gray90
-hi CursorIM gui=None
-hi CursorLine guibg=gray90
-hi DiffAdd guibg=lightblue
-hi DiffChange guibg=plum1
-hi DiffDelete gui=bold guifg=blue guibg=lightcyan
-hi DiffText gui=bold guibg=red
-hi Directory guifg=blue
-hi Error guifg=white guibg=red
-hi ErrorMsg guifg=white guibg=red
-hi FoldColumn guifg=darkblue guibg=grey
-hi Folded guifg=darkblue guibg=lightgrey
-hi Function guifg=#c2c299
-hi Identifier guifg=darkcyan
-hi Ignore guifg=white
-hi IncSearch gui=reverse
-hi LineNr guifg=brown
-hi MatchParen gui=None
-hi ModeMsg gui=bold
-hi MoreMsg gui=bold guifg=seagreen
-hi NonText gui=bold guifg=#ff6f30
-hi Normal guifg=#aaaaaa
-hi Pmenu guibg=plum1
-hi PmenuSbar guibg=grey
-hi PmenuSel guibg=grey
-hi PmenuThumb gui=reverse
-hi PreProc guifg=#a9b5ad
-hi Question gui=bold guifg=seagreen
-hi Search guibg=yellow
-hi SignColumn guifg=darkblue guibg=grey
-hi Special guifg=#ff6f30
-hi SpecialKey guifg=#52a0cb
-hi SpellBad gui=undercurl
-hi SpellCap gui=undercurl
-hi SpellLocal gui=undercurl
-hi SpellRare gui=undercurl
-hi Statement gui=bold guifg=#a9b5ad
-hi StatusLine gui=bold,reverse
-hi StatusLineNC gui=reverse
-hi TabLine gui=underline guibg=lightgrey
-hi TabLineFill gui=reverse
-hi TabLineSel gui=bold
-hi Title gui=bold guifg=magenta
-hi Todo guifg=#eb9195
-hi Type gui=bold guifg=#569cd6
-hi Underlined gui=underline guifg=slateblue
-hi VertSplit gui=reverse
-hi Visual guifg=#aaa9b5
-hi VisualNOS gui=bold,underline
-hi WarningMsg guifg=red
-hi WildMenu guifg=black guibg=yellow
-hi link Boolean Constant
-hi link Character Constant
-hi link Conditional Statement
-hi link Debug Special
-hi link Define PreProc
-hi link Delimiter Special
-hi link Exception Statement
-hi link Float Constant
-hi link Include PreProc
-hi link Keyword Statement
-hi link Label Statement
-hi link Macro PreProc
-hi link Number Constant
-hi link Operator Statement
-hi link PreCondit PreProc
-hi link Repeat Statement
-hi link SpecialChar Special
-hi link SpecialComment Special
-hi link StorageClass Type
-hi link String Constant
-hi link Structure Type
-hi link Tag Special
-hi link Typedef Type
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
+
+syntax on
+set nu
+set termguicolors
+colorscheme perfectdark
