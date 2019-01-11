@@ -4,3 +4,6 @@
 [submodule "Qogir-theme"]
 	path = Qogir-theme
 	url = https://github.com/vinceliuice/Qogir-theme.git
+[submodule "powerline"]
+	path = powerline
+	url = https://github.com/powerline/powerline.git
