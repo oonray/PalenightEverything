@@ -1,0 +1,6 @@
+[submodule "Arc-Dark-ULauncher"]
+	path = Arc-Dark-ULauncher
+	url = https://github.com/iboyperson/Arc-Dark-ULauncher.git
+[submodule "Qogir-theme"]
+	path = Qogir-theme
+	url = https://github.com/vinceliuice/Qogir-theme.git
