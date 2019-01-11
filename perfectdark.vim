@@ -14,7 +14,6 @@ hi cFormat guifg=#e59337
 hi cUserLabel guifg=#c2c299
 hi cType guifg=#78a6a6 cterm=bold
 hi cConstant guifg=#c2c299
-"#9b90c3
 hi cError guibg=#333333
 
 hi Comment guifg=#0987cb

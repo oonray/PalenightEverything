@@ -1,3 +1,8 @@
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /opt/VimTheme/powerline/powerline/bindings/bash/powerline.sh
+
 
 # If not running interactively, don't do anything
 case $- in
@@ -105,3 +110,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export TERM=xterm-256color 
