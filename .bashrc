@@ -1,7 +1,5 @@
 powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /opt/VimTheme/powerline/powerline/bindings/bash/powerline.sh
+powerline-config tmux setup
 
 
 # If not running interactively, don't do anything
@@ -111,4 +109,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export TERM=xterm-256color 
+export TERM=xterm-256color
+
+ 
