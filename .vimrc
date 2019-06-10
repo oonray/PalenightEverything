@@ -114,3 +114,6 @@ nnoremap <space> za
 
 "js stuff"
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+colorscheme perfectdark
+
