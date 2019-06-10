@@ -1,71 +1,116 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"vundle
 
-" set the runtime path to include Vundle and initialize
+
+set nocompatible
+filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
+"git interface
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+"filesystem
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim' 
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+"html
+"  isnowfy only compatible with python not python3
+Plugin 'isnowfy/python-vim-instant-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'nelstrom/vim-markdown-preview'
+"python sytax checker
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-scripts/Pydiction'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'scrooloose/syntastic'
+
+"auto-completion stuff
+"Plugin 'klen/python-mode'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'klen/rope-vim'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
+""code folding
+Plugin 'tmhedberg/SimpylFold'
+
+"Colors!!!
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jnurmine/Zenburn'
+
+call vundle#end()
+
+filetype plugin indent on    " enables filetype detection
+let g:SimpylFold_docstring_preview = 1
+
+"autocomplete
+let g:ycm_autoclose_preview_window_after_completion=1
+
+"custom keys
+let mapleader=" "
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call togglebg#map("<F5>")
+"colorscheme zenburn
+"set guifont=Monaco:h14
 
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
+"I don't like swap files
+set noswapfile
 
-
-" Configuration file for vim
-set modelines=0		" CVE-2007-2438
-
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
-set backspace=2		" more powerful backspacing
-
-" Don't write backup file if vim is being called by "crontab -e"
-au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
-" Don't write backup file if vim is being called by "chpass"
-au BufWrite /private/etc/pw.* set nowritebackup nobackup
-
-syntax on
+"turn on numbering
 set nu
-set termguicolors
+
+"it would be nice to set tag files by the active virtualenv here
+":set tags=~/mytags "tags for ctags and taglist
+"omnicomplete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+"------------Start Python PEP 8 stuff----------------
+" Number of spaces that a pre-existing tab is equal to.
+au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
+
+"spaces for indents
+au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw set expandtab
+au BufRead,BufNewFile *.py set softtabstop=4
+
+" Use the below highlight group when displaying bad whitespace is desired.
+"highlight BadWhitespace ctermbg=red guibg=red
+
+" Display tabs at the beginning of a line in Python mode as bad.
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Wrap text after a certain number of characters
+au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
+
+" Use UNIX (\n) line endings.
+au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
+
+" Set the default file encoding to UTF-8:
+set encoding=utf-8
+
+" For full syntax highlighting:
+let python_highlight_all=1
+syntax on
 colorscheme perfectdark
 
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-" Always show statusline
-set laststatus=2
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
+" Keep indentation level from previous line:
+autocmd FileType python set autoindent
 
+" make backspaces more powerfull
+set backspace=indent,eol,start
+
+"Folding based on indentation:
+autocmd FileType python set foldmethod=indent
+"use space to open folds
+nnoremap <space> za 
+"----------Stop python PEP 8 stuff--------------
+
+"js stuff"
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
