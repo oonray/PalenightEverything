@@ -117,3 +117,12 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 colorscheme perfectdark
 
+set splitbelow
+set splitright
+
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
+
+map <C-n> :NERDTreeToggle<CR>
