@@ -8,7 +8,7 @@ mkdir "$nv"
 mkdir "$colors"
 mkdir "$syntax"
 
-apt-get isntall -y git neofetch
+apt-get install -y git neofetch
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 cp .bashrc $HOME
