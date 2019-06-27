@@ -1,6 +1,5 @@
 "vundle
 
-
 set nocompatible
 filetype off
 
@@ -39,6 +38,8 @@ Plugin 'tmhedberg/SimpylFold'
 "Colors!!!
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
+Plugin 'vim-airline/vim-airline'
+Plugin 'kaicataldo/material.vim'
 
 call vundle#end()
 
@@ -53,10 +54,28 @@ let mapleader=" "
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
 call togglebg#map("<F5>")
-"colorscheme zenburn
-"set guifont=Monaco:h14
+"Color scheme
+set background=dark
+colorscheme material "colorscheme perfecdark
+set guifont=Monaco:h14
+"Truecolors
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+let g:material_theme_style = 'palenight'
+let g:material_terminal_italics = 1
+let g:airline_theme = 'material'
+
+"NERDTree
+let NERDTieeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 "I don't like swap files
 set noswapfile
@@ -97,8 +116,7 @@ set encoding=utf-8
 
 " For full syntax highlighting:
 let python_highlight_all=1
-syntax on
-colorscheme perfectdark
+
 
 " Keep indentation level from previous line:
 autocmd FileType python set autoindent
@@ -115,14 +133,12 @@ nnoremap <space> za
 "js stuff"
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
-colorscheme perfectdark
-
 set splitbelow
 set splitright
 
-nnoremap <C-Down> <C-W><C-J>
-nnoremap <C-Up> <C-W><C-K>
-nnoremap <C-Right> <C-W><C-L>
-nnoremap <C-Left> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 map <C-n> :NERDTreeToggle<CR>

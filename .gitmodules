@@ -7,3 +7,6 @@
 [submodule "powerline"]
 	path = powerline
 	url = https://github.com/powerline/powerline.git
+[submodule "palenight-gnome-term"]
+	path = palenight-gnome-term
+	url = https://github.com/devxom/palenight-gnome-term.git
