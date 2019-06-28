@@ -56,13 +56,6 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 call togglebg#map("<F5>")
 "Color scheme
 
-let g:material_theme_style = 'palenight'
-let g:material_terminal_italics = 1
-let g:airline_theme = 'material'
-
-set background=dark
-colorscheme material "colorscheme perfecdark
-set guifont=Monaco:h14
 "Truecolors
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -75,6 +68,15 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+
+let g:material_theme_style = 'palenight'
+let g:airline_theme = 'material'
+
+set background=dark
+colorscheme material "colorscheme perfecdark
+set guifont=Monaco:h14
+
+
 "NERDTree
 let NERDTieeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
