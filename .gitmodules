@@ -10,3 +10,6 @@
 [submodule "palenight-gnome-term"]
 	path = palenight-gnome-term
 	url = https://github.com/devxom/palenight-gnome-term.git
+[submodule "vim-cpp-modern"]
+	path = vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern.git
