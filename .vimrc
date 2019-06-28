@@ -55,6 +55,11 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
 call togglebg#map("<F5>")
 "Color scheme
+
+let g:material_theme_style = 'palenight'
+let g:material_terminal_italics = 1
+let g:airline_theme = 'material'
+
 set background=dark
 colorscheme material "colorscheme perfecdark
 set guifont=Monaco:h14
@@ -70,10 +75,6 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
-let g:material_theme_style = 'palenight'
-let g:material_terminal_italics = 1
-let g:airline_theme = 'material'
-
 "NERDTree
 let NERDTieeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
