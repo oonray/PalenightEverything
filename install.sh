@@ -11,7 +11,7 @@ mkdir "$syntax"
 sudo apt-get install -y git neofetch vim neovim tmux
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-cp ./settings-backup ~/.config/dconf/user
+cat ./settings-backup > ~/.config/dconf/user
 cp .tmux.conf $HOME
 cp .bashrc $HOME
 cp .vimrc $HOME
