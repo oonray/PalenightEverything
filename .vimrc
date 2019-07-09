@@ -40,6 +40,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kaicataldo/material.vim'
+Plugin 'sudar/vim-arduino-syntax'
 
 call vundle#end()
 
@@ -96,6 +97,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
 
 "spaces for indents
+
 au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
 au BufRead,BufNewFile *.py,*.pyw set expandtab
 au BufRead,BufNewFile *.py set softtabstop=4
@@ -132,6 +134,14 @@ autocmd FileType python set foldmethod=indent
 "use space to open folds
 nnoremap <space> za 
 "----------Stop python PEP 8 stuff--------------
+
+" my_file.ino [arduino:avr:uno]
+function! MyStatusLine()
+  return '%f [' . g:arduino_board . ']'
+endfunction
+
+au BufRead,BufNewFile *.ino setl statusline=%!MyStatusLine()
+
 
 "js stuff"
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
