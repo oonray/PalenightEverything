@@ -118,6 +118,5 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:/home/oonray/.local/bin
-set -o vi
 
 neofetch

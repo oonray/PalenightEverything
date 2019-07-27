@@ -26,18 +26,17 @@ Plugin 'vim-scripts/Pydiction'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 
+Plugin 'szymonmaszke/vimpyter' "Vundle
+
+
 "auto-completion stuff
 "Plugin 'klen/python-mode'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/rope-vim'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
-""code folding
-Plugin 'tmhedberg/SimpylFold'
+Plugin 'ycm-core/YouCompleteMe'
 
-"Colors!!!
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jnurmine/Zenburn'
+"Colors
 Plugin 'vim-airline/vim-airline'
 Plugin 'kaicataldo/material.vim'
 Plugin 'sudar/vim-arduino-syntax'
@@ -45,7 +44,7 @@ Plugin 'sudar/vim-arduino-syntax'
 call vundle#end()
 
 filetype plugin indent on    " enables filetype detection
-let g:SimpylFold_docstring_preview = 1
+syntax on
 
 "autocomplete
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -54,7 +53,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let mapleader=" "
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
-call togglebg#map("<F5>")
+"call togglebg#map("<F5>")
 "Color scheme
 
 "Truecolors
@@ -75,7 +74,7 @@ let g:airline_theme = 'material'
 
 set background=dark
 colorscheme material "colorscheme perfecdark
-set guifont=Monaco:h14
+:set guifont=Monaco:h14
 
 
 "NERDTree
@@ -90,7 +89,8 @@ set nu
 "it would be nice to set tag files by the active virtualenv here
 ":set tags=~/mytags "tags for ctags and taglist
 "omnicomplete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 "------------Start Python PEP 8 stuff----------------
 " Number of spaces that a pre-existing tab is equal to.
@@ -106,9 +106,9 @@ au BufRead,BufNewFile *.py set softtabstop=4
 "highlight BadWhitespace ctermbg=red guibg=red
 
 " Display tabs at the beginning of a line in Python mode as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+"#au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"#au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Wrap text after a certain number of characters
 au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
@@ -146,6 +146,10 @@ au BufRead,BufNewFile *.ino setl statusline=%!MyStatusLine()
 "js stuff"
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
+set background=dark
+colorscheme material "colorscheme perfecdark
+set guifont=Monaco:h14
+
 set splitbelow
 set splitright
 
@@ -155,3 +159,5 @@ nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
 
 map <C-n> :NERDTreeToggle<CR>
+
+highlight Pmenu guibg=#434758 guifg=#C3E88D 
