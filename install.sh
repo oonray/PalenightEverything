@@ -3,6 +3,9 @@ nv="$config/nvim/"
 v="$HOME/.vim"
 colors="$v/colors"
 syntax="$v/syntax"
+i3="$config/i3"
+
+
 
 mkdir "$nv"
 mkdir "$colors"
@@ -18,6 +21,7 @@ cp .bashrc $HOME
 cp .vimrc $HOME
 cp init.vim $nv
 cp perfectdark.vim $colors
-
+cp i3 $config
+cp i3status $config
 
 
