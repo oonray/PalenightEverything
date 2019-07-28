@@ -21,7 +21,8 @@ cp .bashrc $HOME
 cp .vimrc $HOME
 cp init.vim $nv
 cp perfectdark.vim $colors
-cp i3 $config
-cp i3status $config
+cp -r syntax $v
+cp -r i3 $config
+cp -r i3status $config
 
 

@@ -130,9 +130,9 @@ autocmd FileType python set autoindent
 set backspace=indent,eol,start
 
 "Folding based on indentation:
-autocmd FileType python set foldmethod=indent
+"autocmd FileType python set foldmethod=indent
 "use space to open folds
-nnoremap <space> za 
+"nnoremap <space> za 
 "----------Stop python PEP 8 stuff--------------
 
 " my_file.ino [arduino:avr:uno]
@@ -161,3 +161,5 @@ nnoremap <C-h> <C-W><C-H>
 map <C-n> :NERDTreeToggle<CR>
 
 highlight Pmenu guibg=#434758 guifg=#C3E88D 
+let c_no_curly_error=1
+
