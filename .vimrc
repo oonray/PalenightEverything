@@ -163,6 +163,6 @@ map <C-n> :NERDTreeToggle<CR>
 highlight Pmenu guibg=#434758 guifg=#C3E88D 
 let c_no_curly_error=1
 
-inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+"inoremap <expr> j pumvisible() ?"\<C-N>" :"j"
+"inoremap <expr> k pumvisible() ?"\<C-P>" :"k"
 
