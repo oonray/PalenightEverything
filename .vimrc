@@ -40,6 +40,7 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kaicataldo/material.vim'
 Plugin 'sudar/vim-arduino-syntax'
+Plugin 'vim-python/python-syntax'
 
 call vundle#end()
 
@@ -124,7 +125,7 @@ let python_highlight_all=1
 
 
 " Keep indentation level from previous line:
-autocmd FileType python set autoindent
+#autocmd FileType python set autoindent
 
 " make backspaces more powerfull
 set backspace=indent,eol,start
@@ -163,6 +164,6 @@ map <C-n> :NERDTreeToggle<CR>
 highlight Pmenu guibg=#434758 guifg=#C3E88D 
 let c_no_curly_error=1
 
-inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+"inoremap <expr> j pumvisible() ?"\<C-N>" :"j"
+"inoremap <expr> k pumvisible() ?"\<C-P>" :"k"
 
