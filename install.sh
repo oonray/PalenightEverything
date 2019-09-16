@@ -11,7 +11,7 @@ mkdir "$nv"
 mkdir "$colors"
 mkdir "$syntax"
 
-sudo apt-get install -y git neofetch vim neovim tmux python python3 python-pip python3-pip  exuberant-ctags snmp-mibs-downloader gdb
+sudo apt-get install -y git neofetch vim neovim tmux python python3 python-pip python3-pip  exuberant-ctags snmp-mibs-downloader gdb radare2
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 python3 -m pip install -r requirements.txt
 
