@@ -11,9 +11,14 @@ mkdir "$nv"
 mkdir "$colors"
 mkdir "$syntax"
 
-sudo apt-get install -y git neofetch vim neovim tmux python python3 python-pip python3-pip  exuberant-ctags
+sudo apt-get install -y git neofetch vim neovim tmux python python3 python-pip python3-pip  exuberant-ctags snmp-mibs-downloader gdb
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 python3 -m pip install -r requirements.txt
+
+echo "# As the snmp packages come without MIB files due to license reasons, loading" > /etc/snmp/snmp.conf
+echo "# of MIBs is disabled by default. If you added the MIBs you can reenable" >> /etc/snmp/snmp.conf
+echo "# loading them by commenting out the following line." >> /etc/snmp/snmp.conf
+echo "#mibs :" >> /etc/snmp/snmp.conf
 
 cat ./settings-backup > ~/.config/dconf/user
 cp .tmux.conf $HOME
@@ -24,5 +29,5 @@ cp perfectdark.vim $colors
 cp -r syntax $v
 cp -r i3 $config
 cp -r i3status $config
-
+cp -r .gdbinit ~/.gdbinit
 
