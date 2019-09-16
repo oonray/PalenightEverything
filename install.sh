@@ -21,7 +21,7 @@ echo "# loading them by commenting out the following line." >> /etc/snmp/snmp.co
 echo "#mibs :" >> /etc/snmp/snmp.conf
 
 echo "set disassembly intel" > ~/.gdbinit
-echo "source $(pwd)/peda.py" >> ~/.gdbinit
+echo "source $(pwd)/peda/peda.py" >> ~/.gdbinit
 
 cat ./settings-backup > ~/.config/dconf/user
 cp .tmux.conf $HOME
