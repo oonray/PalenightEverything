@@ -20,6 +20,9 @@ echo "# of MIBs is disabled by default. If you added the MIBs you can reenable" 
 echo "# loading them by commenting out the following line." >> /etc/snmp/snmp.conf
 echo "#mibs :" >> /etc/snmp/snmp.conf
 
+echo "set disassembly intel" > ~/.gdbinit
+echo "source $(pwd)/peda.py" >> ~/.gdbinit
+
 cat ./settings-backup > ~/.config/dconf/user
 cp .tmux.conf $HOME
 cp .bashrc $HOME
@@ -29,5 +32,5 @@ cp perfectdark.vim $colors
 cp -r syntax $v
 cp -r i3 $config
 cp -r i3status $config
-cp -r .gdbinit ~/.gdbinit
+
 

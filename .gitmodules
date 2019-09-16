@@ -13,3 +13,6 @@
 [submodule "vim-cpp-modern"]
 	path = vim-cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern.git
+[submodule "peda"]
+	path = peda
+	url = https://github.com/longld/peda.git
