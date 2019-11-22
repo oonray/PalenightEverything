@@ -38,7 +38,6 @@ i3:
 	cd /tmp/i3-gaps/build && make && make install	
 
 	
-
 programs:
 	sudo apt-get install -y neofetch git
 
@@ -91,11 +90,16 @@ bash:
 	cp bash/.bashrc $(HOME)
 	cat bash/settings-backup > $(HOME)/.config/dconf/user
 
-nvim:
-	sudo apt-get install neovim -y
+nvim: ccls
+	sudo curl -fLo /usr/bin/nvim https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
+	sudo chmod +x /bin/nvim
+	sudo npm install -g yarn
 	curl -sL install-node.now.sh/lts | sudo bash
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	cp vim/.vimrc $(HOME)
 	cp vim/init.vim $(nvimconf) 
 
-
+ccls:
+	sudo apt install -y zlib1g-dev libncurses-dev
+	sudo apt install -y clang libclang-dev
+	sudo snap install ccls --classic
