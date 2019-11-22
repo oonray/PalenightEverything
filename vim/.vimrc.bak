@@ -1,0 +1,159 @@
+"vundle
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+"git interface
+Plugin 'tpope/vim-fugitive'
+"filesystem
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim' 
+
+"html
+"  isnowfy only compatible with python not python3
+Plugin 'isnowfy/python-vim-instant-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'nelstrom/vim-markdown-preview'
+"python sytax checker
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-scripts/Pydiction'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'scrooloose/syntastic'
+
+Plugin 'szymonmaszke/vimpyter' "Vundle
+
+
+"auto-completion stuff
+"Plugin 'klen/python-mode'
+Plugin 'klen/rope-vim'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
+Plugin 'ycm-core/YouCompleteMe'
+
+"Colors
+Plugin 'vim-airline/vim-airline'
+Plugin 'kaicataldo/material.vim'
+Plugin 'sudar/vim-arduino-syntax'
+Plugin 'vim-python/python-syntax'
+
+call vundle#end()
+
+filetype plugin indent on    " enables filetype detection
+syntax on
+
+"autocomplete
+let g:ycm_autoclose_preview_window_after_completion=1
+
+"custom keys
+let mapleader=" "
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"
+"call togglebg#map("<F5>")
+"Color scheme
+
+"Truecolors
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+let g:material_theme_style = 'palenight'
+let g:airline_theme = 'material'
+
+set background=dark
+colorscheme material "colorscheme perfecdark
+:set guifont=Monaco:h14
+
+
+"NERDTree
+let NERDTieeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+"I don't like swap files
+set noswapfile
+
+"turn on numbering
+set nu
+
+"it would be nice to set tag files by the active virtualenv here
+":set tags=~/mytags "tags for ctags and taglist
+"omnicomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+"------------Start Python PEP 8 stuff----------------
+" Number of spaces that a pre-existing tab is equal to.
+au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
+
+"spaces for indents
+au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *.py set softtabstop=4
+
+" Use the below highlight group when displaying bad whitespace is desired.
+"highlight BadWhitespace ctermbg=red guibg=red
+
+" Display tabs at the beginning of a line in Python mode as bad.
+"#au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" Make trailing whitespace be flagged as bad.
+"#au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Set the default file encoding to UTF-8:
+set encoding=utf-8
+
+" For full syntax highlighting:
+let python_highlight_all=1
+
+
+" Keep indentation level from previous line:
+#autocmd FileType python set autoindent
+
+" make backspaces more powerfull
+"Folding based on indentation:
+"autocmd FileType python set foldmethod=indent
+"use space to open folds
+"nnoremap <space> za 
+"----------Stop python PEP 8 stuff--------------
+
+" my_file.ino [arduino:avr:uno]
+function! MyStatusLine()
+  return '%f [' . g:arduino_board . ']'
+endfunction
+
+au BufRead,BufNewFile *.ino setl statusline=%!MyStatusLine()
+
+
+"js stuff"
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+set background=dark
+colorscheme material "colorscheme perfecdark
+set guifont=Monaco:h14
+
+set splitbelow
+set splitright
+
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
+
+map <C-n> :NERDTreeToggle<CR>
+
+highlight Pmenu guibg=#434758 guifg=#C3E88D 
+let c_no_curly_error=1
+
+"inoremap <expr> j pumvisible() ?"\<C-N>" :"j"
+"inoremap <expr> k pumvisible() ?"\<C-P>" :"k"
+

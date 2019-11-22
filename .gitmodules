@@ -1,0 +1,21 @@
+[submodule "Arc-Dark-ULauncher"]
+	path = Arc-Dark-ULauncher
+	url = https://github.com/iboyperson/Arc-Dark-ULauncher.git
+[submodule "Qogir-theme"]
+	path = Qogir-theme
+	url = https://github.com/vinceliuice/Qogir-theme.git
+[submodule "powerline"]
+	path = powerline
+	url = https://github.com/powerline/powerline.git
+[submodule "palenight-gnome-term"]
+	path = palenight-gnome-term
+	url = https://github.com/devxom/palenight-gnome-term.git
+[submodule "vim-cpp-modern"]
+	path = vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern.git
+[submodule "peda"]
+	path = peda
+	url = https://github.com/longld/peda.git
+[submodule "debuggers/pwndbg"]
+	path = debuggers/pwndbg
+	url = https://github.com/pwndbg/pwndbg

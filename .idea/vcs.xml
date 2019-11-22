@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/debuggers/pwndbg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/peda" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pwndbg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim-cpp-modern" vcs="Git" />
+  </component>
+</project>

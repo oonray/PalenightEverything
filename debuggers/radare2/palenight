@@ -1,0 +1,58 @@
+ec ai.exec rgb:7FB347
+ec ai.read rgb:C792EA
+ec ai.write rgb:F78C6C
+ec ai.ascii rgb:FFCB6B
+ec args rgb:F78C5B
+ec b0x00 rgb:C3E872             # 00 bytes
+ec b0x7f rgb:EEFFFF
+ec b0xff rgb:EEffff             # ff bytes
+ec bin rgb:c3e88d               # operations like xor
+ec btext rgb:959DCB             # text section opcode? first byte of opcode
+ec call rgb:82AAFF              # call instructions
+ec ucall rgb:82AAFF
+ec cjmp rgb:c3e88d              # je, jg, etc
+ec cmp rgb:c3e88d               # cmp instructions
+ec comment rgb:676F9B           # r2 renerated comments
+ec creg rgb:F78C6C              # modified registries
+ec flag rgb:676F9B              # flags. usually apprears above the current seek
+ec fline rgb:676F9B             # function line. the boundary of a function
+ec flow rgb:959DCB              # lines that show jump destinations
+ec flow2 rgb:959DCB
+ec fname rgb:82AAFF             # function name
+ec floc rgb:c3e88d
+ec graph.box rgb:959DCB         # unselected boxes in visual graph mode
+ec graph.box2 rgb:c3e88d         # currently selected box in visual graph mode
+ec graph.box3 rgb:959DCB
+ec graph.box4 rgb:959DCBi
+ec graph.traced rgb:FFCB6B
+ec graph.current rgb:eeffff
+ec graph.false rgb:D25252       # false line on visual graph mode
+ec graph.true rgb:C3E872        # true line on visual graph mode
+ec graph.trufae rgb:959DCB      # lines in graph that does not have true or false
+ec gui.cflow rgb:FFCB6B
+ec gui.dataoffset rgb:FFCB6B
+ec help rgb:c3e88d              # color of help explanation text
+ec input rgb:959DCB
+ec jmp rgb:c3e88d               # jmp instructions
+ec ujmp rgb:c3e88d
+ec label rgb:82AAFF
+ec linehl rgb:959DCB            # highlight color when using asm.highlight
+ec math rgb:EEFFFF              # math instructions like sub, add
+ec mov rgb:EEFFFF               # mov instructions
+ec nop rgb:EEFFFF               # nop instructions
+ec num rgb:F78C6C               # numbers
+ec offset rgb:C792EA            # offset in visual mode
+ec other rgb:959DCB
+ec pop rgb:EEFFFF               # pop instructions
+ec prompt rgb:c3e88d            # color for main r2 prompt
+ec push rgb:EEFFFF              # push instructions
+ec reg rgb:c3e88d               # register names
+ec ret rgb:c3e88d               # ret opcode
+ec swi rgb:D25252
+ec trap rgb:D25252                
+ec usrcmt rgb:676F9B           # user comment
+
+ec func_var rgb:c3e88d
+ec func_var_type rgb:FFCB6B
+ec func_var_addr rgb:F78C6C
+
