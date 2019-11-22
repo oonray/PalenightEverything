@@ -21,5 +21,19 @@
                 }
             	}
         }
-	}
+	},
+	"languageserver": {
+   	 "digestif": {
+      "command": "digestif",
+      "filetypes": ["tex", "plaintex", "context"]
+    }
+  },
+   "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    }
+  },
+
 }

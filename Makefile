@@ -103,3 +103,7 @@ ccls:
 	sudo apt install -y zlib1g-dev libncurses-dev
 	sudo apt install -y clang libclang-dev
 	sudo snap install ccls --classic
+	sudo apt-get install -y luarocks
+	luarocks install --server=http://luarocks.org/dev digestif
+
+	cp vim/coc.vim $(nvimconf)
