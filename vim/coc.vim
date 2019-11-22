@@ -19,7 +19,7 @@
                 "cache": {
                     "directory": "/tmp/ccls"
                 }
-            }
+            	}
         }
-    }
+	}
 }
