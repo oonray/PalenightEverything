@@ -90,7 +90,7 @@ bash:
 	cp bash/.bashrc $(HOME)
 	cat bash/settings-backup > $(HOME)/.config/dconf/user
 
-nvim: ccls
+nvim: 
 	sudo curl -fLo /usr/bin/nvim https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
 	sudo chmod +x /bin/nvim
 	sudo npm install -g yarn
