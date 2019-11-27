@@ -23,7 +23,7 @@ r2themes=$(HOME)/.local/share/radare2/cons
 #	*i3-gaps
 #	*terminal
 
-all: programs bash gdb nvim python c mibs gdb radare2 bash 
+all: programs bash gdb nvim python c mibs gdb radare2 tmux 
 
 i3:
 	sudo apt-get install -y git build-essential autoconf pkg-config libxcb-shape0-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev
@@ -106,3 +106,7 @@ ccls:
 	sudo apt-get install -y luarocks
 	#sudo luarocks install --server=http://luarocks.org/dev digestif
 	cp vim/coc.vim $(nvimconf)
+
+tmux:
+	sudo apt-get install tmux
+	cp bash/.tmux.conf $(HOME)
