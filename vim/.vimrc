@@ -74,6 +74,19 @@ nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
 
+""
+" 4 TAB indent
+""
+
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+
 "
 "	HIGHLIGHT
 "
