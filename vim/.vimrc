@@ -9,7 +9,7 @@ set hidden
 "	PLUGINS
 ""
 call plug#begin('~/.vim/plugged')
-
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdtree'
 Plug 'kaicataldo/material.vim'
 Plug 'vim-airline/vim-airline'
