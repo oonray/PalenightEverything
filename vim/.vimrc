@@ -13,6 +13,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'scrooloose/nerdtree'
 Plug 'kaicataldo/material.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'sheerun/vim-polyglot'
 "
 "	COC Completion
 "
