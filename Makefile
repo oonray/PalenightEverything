@@ -97,6 +97,7 @@ nvim:
 	curl -sL install-node.now.sh/lts | sudo bash
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	cp vim/.vimrc $(HOME)
+	cp -r ./vim/syntax $(vim)
 	cp vim/init.vim $(nvimconf) 
 
 ccls:
@@ -104,7 +105,7 @@ ccls:
 	sudo apt install -y clang libclang-dev
 	sudo snap install ccls --classic
 	sudo apt-get install -y luarocks
-	#sudo luarocks install --server=http://luarocks.org/dev digestif
+#	sudo luarocks install --server=http://luarocks.org/dev digestif
 	cp vim/coc.vim $(nvimconf)
 
 tmux:
