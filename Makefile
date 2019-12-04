@@ -1,4 +1,4 @@
-#Standard local locations
+#Standard local locations|j
 sh=./bash
 dbg=./debuggers
 i3=./i3gaps
@@ -36,8 +36,11 @@ i3:
 	        && mkdir -p build && cd build/ \
 	        && ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers 
 	cd /tmp/i3-gaps/build && make && make install	
-
-	
+transperent:
+	sudo apt-get install -y compton feh
+	cp vim/compton.conf $(config)
+	echo "exec compton" >> $(HOME)/.config/i3/config
+	echo "exec --no-startup-id feh --bg-fill $(shell pwd)/the-vision-of-the-valley-of-dry-bones-1866.jpg" >> $(HOME)/.config/i3/config
 programs:
 	sudo apt-get install -y neofetch git
 
