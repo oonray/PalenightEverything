@@ -23,7 +23,7 @@ r2themes=$(HOME)/.local/share/radare2/cons
 #	*i3-gaps
 #	*terminal
 
-all: programs bash gdb nvim python c mibs gdb radare2 bash 
+all: programs bash gdb nvim python c mibs gdb radare2 tmux 
 
 i3:
 	sudo apt-get install -y git build-essential autoconf pkg-config libxcb-shape0-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev
@@ -93,13 +93,14 @@ bash:
 	cp bash/.bashrc $(HOME)
 	cat bash/settings-backup > $(HOME)/.config/dconf/user
 
-nvim: ccls
+nvim: 
 	sudo curl -fLo /usr/bin/nvim https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
 	sudo chmod +x /bin/nvim
 	sudo npm install -g yarn
 	curl -sL install-node.now.sh/lts | sudo bash
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	cp vim/.vimrc $(HOME)
+	cp -r ./vim/syntax $(vim)
 	cp vim/init.vim $(nvimconf) 
 
 ccls:
@@ -107,5 +108,9 @@ ccls:
 	sudo apt install -y clang libclang-dev
 	sudo snap install ccls --classic
 	sudo apt-get install -y luarocks
-	#sudo luarocks install --server=http://luarocks.org/dev digestif
+#	sudo luarocks install --server=http://luarocks.org/dev digestif
 	cp vim/coc.vim $(nvimconf)
+
+tmux:
+	sudo apt-get install tmux
+	cp bash/.tmux.conf $(HOME)

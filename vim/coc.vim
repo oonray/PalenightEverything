@@ -1,30 +1,32 @@
 {         
     "languageserver": {       
-        "ccls": {                               
-            "command": "ccls",                  
-            "filetypes": [                      
+    "ccls": {                               
+        "command": "ccls",                  
+        "filetypes": [                      
                 "c",                                             
                 "cpp",                        
                 "objc",                       
                 "objcpp"                      
             ],                                
-            "rootpatterns": [                 
+        "rootpatterns": [                 
                 ".ccls",                      
                 "compile_commands.json",
                 ".vim/",                      
                 ".git/",                      
                 ".hg/"                        
             ],                                
-            "initializationoptions": {        
+        "initializationoptions": {        
                 "cache": {                    
                     "directory": "/tmp/ccls"
                 }                             
                 }                             
         },                                    
-   "digestif": {                              
+   
+    "digestif": {                              
       "command": "digestif",                  
       "filetypes": ["tex", "plaintex", "context"]
     },
+
     "terraform": {
       "command": "terraform-lsp",
       "filetypes": ["terraform"],             
