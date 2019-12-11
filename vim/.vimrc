@@ -134,6 +134,7 @@ let g:coc_global_extensions = [
   \ 'coc-go',
   \ 'coc-css',
   \ 'coc-sh',
+  \ 'coc-vimtex',
   \ ]
 " from readme
 " if hidden is not set, TextEdit might fail.
