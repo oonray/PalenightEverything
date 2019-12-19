@@ -101,7 +101,7 @@ nvim:
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	cp vim/.vimrc $(HOME)
 	cp -r ./vim/syntax $(vim)
-	cp vim/init.vim $(nvimconf) 
+	cp vim/init.vim $(nvimconf)/init.vim 
 
 ccls:
 	sudo apt install -y zlib1g-dev libncurses-dev
