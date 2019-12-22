@@ -42,7 +42,7 @@ transperent:
 	echo "exec compton" >> $(HOME)/.config/i3/config
 	echo "exec --no-startup-id feh --bg-fill $(shell pwd)/the-vision-of-the-valley-of-dry-bones-1866.jpg" >> $(HOME)/.config/i3/config
 programs:
-	sudo apt-get install -y neofetch git
+	sudo apt-get install -y neofetch git curl
 
 python:
 	sudo apt-get install -y python3 python3-pip python python-pip
@@ -96,6 +96,8 @@ bash:
 nvim: 
 	sudo curl -fLo /usr/bin/nvim https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
 	sudo chmod +x /bin/nvim
+	sudo apt-get -y install npm
+	mkdir -p /home/oonray/.config/nvim/
 	sudo npm install -g yarn
 	curl -sL install-node.now.sh/lts | sudo bash
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
