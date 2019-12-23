@@ -36,11 +36,13 @@ i3:
 	        && mkdir -p build && cd build/ \
 	        && ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers 
 	cd /tmp/i3-gaps/build && make && make install	
+
 transperent:
 	sudo apt-get install -y compton feh
 	cp vim/compton.conf $(config)
 	echo "exec compton" >> $(HOME)/.config/i3/config
 	echo "exec --no-startup-id feh --bg-fill $(shell pwd)/the-vision-of-the-valley-of-dry-bones-1866.jpg" >> $(HOME)/.config/i3/config
+
 programs:
 	sudo apt-get install -y neofetch git curl
 
@@ -70,7 +72,6 @@ completion: go
 	sudo apt-get install -y cmake python3-dev mono-devel golang
 	cd ~/.vim/bundle/YouCompleteMe && python3 ./install.py --all && python3 install.py --clangd-completer
 	
-
 gdb:
 	@echo [+] Installing Gdb Peda
 	sudo apt-get install gdb
