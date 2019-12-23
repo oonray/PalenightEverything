@@ -97,6 +97,6 @@ ${color}${goto 13}${top name 6} ${goto 210}${top pid 6} ${goto 275}$color4${top 
 ${color}${goto 13}${top name 7} ${goto 210}${top pid 7} ${goto 275}$color4${top cpu 7} ${goto 350}${top mem 7}
 ${color}${goto 13}${top name 8} ${goto 210}${top pid 8} ${goto 275}$color4${top cpu 8} ${goto 350}${top mem 8}
 ${color}${goto 13}${top name 9} ${goto 210}${top pid 9} ${goto 275}$color4${top cpu 9} ${goto 350}${top mem 9}
-hr
+$hr
 ${execpi 300 gcalcli --nocolor --conky agenda}
 ]]
