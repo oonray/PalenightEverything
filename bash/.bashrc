@@ -86,7 +86,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 alias tree='tree -C'
 alias ps='ps -eHF'
 # some more ls aliases
@@ -99,6 +98,7 @@ alias tmux='tmux -2'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias keepass='mono /opt/keepass/KeePass.exe & xsel --clipboard | xsel --primary --input'
+alias audiobook = "arecord -Dplughw:CARD=PCH,DEV=2 -fdat | aplay"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -119,7 +119,11 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+source ~/.config/cdev
 
 export PATH=$PATH:/home/oonray/.local/bin:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 
 neofetch
