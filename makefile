@@ -5,11 +5,12 @@ i3=./i3gaps
 
 #Confiug Files for vim and othe configs.
 #Moste is vim or i3 config so moved to vim.
-vim=$(HOME)/.vim
+h_vim=$(HOME)/.vim
 colors=$(h_vim)/colors
 syntax=$(h_vim)/syntax
 config=$(HOME)/.config
 nvimconf=$(config)/nvim
+vifmconf=$(config)/vifm
 r2themes=$(HOME)/.local/share/radare2/cons
 
 #Vim and neovim config paths
@@ -116,3 +117,10 @@ ccls:
 tmux:
 	sudo apt-get install tmux
 	cp bash/.tmux.conf $(HOME)
+
+vimfm:
+	sudo apt-get install -y vifm
+	mkdir -p $(vifmconf)/colors
+	cp ./vim/palenight.vifm $(vifmconf)/colors/
+	cp ./vim/.vifmrc $(vifmconf)/vifmrc
+
