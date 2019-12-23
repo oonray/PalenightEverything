@@ -56,7 +56,6 @@ go:
 	sudo apt-get update
 	sudo apt-get install -y golang-go golang-go.tools
 
-
 mibs:
 	sudo apt-get install -y snmp-mibs-downloader
 	sudo mkdir -p /etc/snmp/
