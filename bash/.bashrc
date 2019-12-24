@@ -98,7 +98,7 @@ alias tmux='tmux -2'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias keepass='mono /opt/keepass/KeePass.exe & xsel --clipboard | xsel --primary --input'
-alias audiobook = "arecord -Dplughw:CARD=PCH,DEV=2 -fdat | aplay"
+alias audiobook="arecord -Dplughw:CARD=PCH,DEV=2 -fdat | aplay"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
