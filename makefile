@@ -24,7 +24,7 @@ r2themes=$(HOME)/.local/share/radare2/cons
 #	*i3-gaps
 #	*terminal
 
-all: programs bash gdb nvim python c mibs gdb radare2 tmux 
+all: programs bashconf gdb nvim python c mibs gdb radare2 tmux 
 
 i3:
 	sudo apt-get install -y git build-essential autoconf pkg-config libxcb-shape0-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev
@@ -37,6 +37,9 @@ i3:
 	        && mkdir -p build && cd build/ \
 	        && ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers 
 	cd /tmp/i3-gaps/build && make && make install	
+
+i3conf:
+	cp -r ./i3gaps/* $(HOME)/.config/
 
 transperent:
 	sudo apt-get install -y compton feh
@@ -88,8 +91,8 @@ radare2:
 	cp debuggers/radare2/.radare2rc $(HOME)
 	cp debuggers/radare2/palenight $(r2themes)
 
-bash:
-	sudo apt-get install tmux pcp pcp-webapi libpcp-pmda3-dev libpcp3-dev linux-tools net-tools -y
+bashconf:
+	sudo apt-get install net-tools -y
 	cp bash/.tmux.conf $(HOME)
 	cp bash/.bashrc $(HOME)
 	cat bash/settings-backup > $(HOME)/.config/dconf/user
@@ -124,3 +127,30 @@ vimfm:
 	cp ./vim/palenight.vifm $(vifmconf)/colors/
 	cp ./vim/.vifmrc $(vifmconf)/vifmrc
 
+termite:
+	sudo apt-get install -y \
+	git \
+	g++ \
+	libgtk-3-dev \
+	gtk-doc-tools \
+	gnutls-bin \
+	valac \
+	intltool \
+	libtool \
+	libpcre2-dev \
+	libglib3.0-cil-dev \
+	libgnutls28-dev \
+	libgirepository1.0-dev \
+	libxml2-utils \
+	gperf
+	
+	git clone --recursive https://github.com/thestinger/termite.git /tmp/termite
+	git clone https://github.com/thestinger/vte-ng.git /tmp/vte-ng
+
+	echo export LIBRARY_PATH="/usr/include/gtk-3.0:$LIBRARY_PATH"
+	cd /tmp/vte-ng && ./autogen.sh && make && sudo make install
+	cd /tmp/termite && make && sudo make install
+	sudo ldconfig
+	sudo mkdir -p /lib/terminfo/x; sudo ln -s \
+	/usr/local/share/terminfo/x/xterm-termite \
+	/lib/terminfo/x/xterm-termite

@@ -1,4 +1,0 @@
-#!/bin/bash
-containers="/opt/Docker"
-
-docker-compose -f 
