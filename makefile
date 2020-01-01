@@ -103,7 +103,7 @@ nvim:
 	curl -sL install-node.now.sh/lts | sudo bash
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	cp vim/.vimrc $(HOME)
-	cp -r ./vim/syntax $(vim)
+	cp -r ./vim/syntax $(h_vim)
 	cp vim/init.vim $(nvimconf)/init.vim 
 
 ccls:
