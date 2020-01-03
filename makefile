@@ -102,6 +102,9 @@ nvim:
 	sudo npm install -g yarn
 	curl -sL install-node.now.sh/lts | sudo bash
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	mkdir -p ~/.vim/pack/plugins/start 
+	git clone https://github.com/saltstack/salt-vim.git ~/.vim/pack/plugins/start/salt.vim
+	git clone https://github.com/Glench/Vim-Jinja2-Syntax.git ~/.vim/pack/plugins/start/jinja2.vim 
 	cp vim/.vimrc $(HOME)
 	cp -r ./vim/syntax $(h_vim)
 	cp vim/init.vim $(nvimconf)/init.vim 
